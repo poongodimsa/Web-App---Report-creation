@@ -1,0 +1,39 @@
+<html>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<head>
+		<meta charset="UTF-8">
+		<title>Past Extractions </title>
+	</head>
+	<body>
+		<div  class="back">
+			<a align="left" href="{{ url_for('dashboard') }}" class="btn">Back</a> 
+		</div>
+		
+		<div align="center" class="heading" > 
+			<font  color="green" >CREDIT</font><b>VISION </b>- <font  color="green"  > TRASCRIZIONE</font>
+		</div>
+		<hr>
+
+		<form>
+		<br><div align="center">
+				<div class="dash2" > <h1 class="title">Past Extractions</h1> <br>
+				<div style="{margin:0;padding:0;}">
+				{% with messages = get_flashed_messages() %} {% if messages %}
+				
+					{% for message in messages %}
+						
+					{% autoescape false %} {{ message | safe }} {% endautoescape %}
+					
+					{% endfor %}
+			   
+				{% endif %} {% endwith %}
+				</div>
+			
+				
+				</div>
+				</div>
+		</form>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<head>
+		<meta charset="UTF-8">
+		<title>CreditVision - Trascrizione : New Report</title>
+		
+		<script type="text/javascript">
+			function loading(){
+                $('#loading').show(); 
+                $('#detail').hide();
+    		}
+		</script>
+	</head>
+	
+	<body>
+		<div class="back">
+			<a align="left" href="{{ url_for('dashboard') }}" class="btn">Back</a> 
+		</div>
+		<div align="center" class="heading" > 
+			<font  color="green" >CREDIT</font><b>VISION - </b> <font  color="green" > TRASCRIZIONE</font>
+		</div>
+		<hr>
+		
+		<p>
+			{% with messages = get_flashed_messages() %} 
+				{% if messages %}
+				<ul class=flashes>
+					{% for message in messages %}
+					<li>{{ message }}</li>
+					{% endfor %}
+				</ul>
+				{% endif %} 
+			{% endwith %}
+		
+		</p>
+	<form method="post" onsubmit="loading();">
+		<br>
+		<div align="center" id="loading" style="display:none;">
+			<div> <font  color="grey" size="3px"> Processing. please wait...</font></div>
+			<br><br>
+			<img src="{{ url_for('static', filename='loading.gif') }}" alt="" />
+		</div>
+		
+		<div id="detail" align="center">
+			<div class="msg">{{ msg }}</div>
+			
+			<div  align="center" class="outerup" >
+					<h1 class="title">New Extraction</h1>
+					<div align="left" >
+						<br>
+						<div  class="container">
+							<br>
+							<label  class="replabel">Report Name:</label>
+							<input type="text" id="repname" name="repname" required>
+						</div>
+						<div  class="container">
+							<br>
+							<label class="replabel" for="excelfile">Select fiscal codes excel file:</label>
+							<input type="file" name="excelfile" multiple="false" autocomplete="off" accept=".xlsx" required>
+						</div>
+						<div class='container' >
+							<br>
+							<label class="replabel" for="files[]">Select pdf files:</label>
+							<input type="file" name="files[]" multiple="true" autocomplete="off" accept=".pdf" required>
+						</div>
+						<div align="center" class='container' >
+							<br>
+							<input type="submit" name="Extract" class='dashbtn' value="Extract" >	
+							<br>
+						</div>
+						<br>
+					</div>
+			</div>
+		</div>
+		
+	</form>
+	
+	</body>
+	

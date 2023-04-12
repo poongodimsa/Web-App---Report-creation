@@ -1,0 +1,36 @@
+<!doctype html>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<head>
+		<meta charset="UTF-8">
+		<title>CreditVision - Trascrizione : Dashboard</title>
+	</head>
+	<body>
+		<div  align="right" class="back">
+			<a  href="{{ url_for('logout') }}" class="btn">Logout</a> 
+		</div>
+		
+		<div align="center" class="heading" > 
+			<font  color="green" >CREDIT</font><b>VISION </b>- <font  color="green"  > TRASCRIZIONE</font>
+		</div>
+		<hr>
+		
+		
+ 
+<form method="post" action="/dashboard" enctype="multipart/form-data">
+		<br><br>
+                <div align="center" class="pad">
+					<div class="dash" > <h1 class="title">Dashboard</h1> <br><br>
+					<input type="submit" class="dashbtn"  name="action"  value="New extraction"> 
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="submit" class="dashbtn" name="action" value="Past extractions">
+					<br><br>
+					</div>
+					</div>
+                
+        
+	
+
+    </form>
+	
+</body>

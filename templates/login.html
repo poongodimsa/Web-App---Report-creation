@@ -1,0 +1,44 @@
+
+<html>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<head>
+		<meta charset="UTF-8">
+		<title>CreditVision - Trascrizione : Login</title>
+	</head>
+	<body>
+		<div  align="center" class="back"><font color="#3a3a3a">
+			Welcome!</font>
+		</div>
+		
+		<div align="center" class="heading" > 
+			<font  color="green" >CREDIT</font><b>VISION </b>- <font  color="green"  > TRASCRIZIONE</font>
+		</div>
+		<hr>
+
+
+				
+				<form action="{{ url_for('login') }}" method="post">
+				<br>
+				
+				<div class="msg">{{ msg }}</div><br>
+				
+					<div align="center" style="{padding: 50px 0;}" >
+					
+						<div  >
+							<div class="dashlog" ><h1 class="title">Login</h1><br>
+							
+							<div align="center" class='container' >
+								<input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox" required /><br><br></div>
+							<div align="center" class='container' >
+								<input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox" required /><br><br></div>
+							<div align="center" class='container' >
+								<input type="submit" class="dashbtn" value="Sign In"></div><br>
+							</div>
+						</div>
+					</div>
+				</form>
+				
+		
+	</body>
+</html>
